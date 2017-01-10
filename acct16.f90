@@ -26,7 +26,7 @@
 !  Process command line arguments
       
       K = 1
-      NK = 6
+      NK = 5 ! number of impacts you want to calculate 
 100   if (IARGC().lt.K) call ERROR('Usage: rrca-acct16 file.in')
       call GETARG(K,inFILE)
       write(*,'(A,A)') 'Reading file names of 16-Run SFI files and the Output CSV file from ',inFILE
