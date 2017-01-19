@@ -32,11 +32,12 @@ C  ------------------------------------------------------------------- C
       IOS = -1
       CHARIN = ' '
       LN = LEN(LINE)
+      if (ISTART.gt.LN) RETURN
       IEND = ISTART
-      do while (IEND.le.LN .and. LINE(IEND:IEND).eq.' ')
+      do while (LINE(IEND:IEND).eq.' ')
         IEND = IEND+1
+        if (IEND.gt.LN) RETURN
       enddo
-      if (IEND.gt.LN) RETURN
       if (LINE(IEND:IEND).eq.'"') then
         IEND = IEND+1
         I0 = IEND
